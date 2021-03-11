@@ -17,16 +17,7 @@ include_directories (${Boost_INCLUDE_DIRS})
 
 set(INC
   inc/${PROJECT_NAME}/atomic.hpp
-  inc/${PROJECT_NAME}/atomic_proxies.hpp
-  inc/${PROJECT_NAME}/atomic_rw.hpp
-  inc/${PROJECT_NAME}/atomic_rw_base.hpp
-  inc/${PROJECT_NAME}/container_base.hpp
-  inc/${PROJECT_NAME}/container_traits.hpp
-  inc/${PROJECT_NAME}/deque.hpp
-  inc/${PROJECT_NAME}/list.hpp
-  inc/${PROJECT_NAME}/optional.hpp
-  inc/${PROJECT_NAME}/optional_base.hpp
-  inc/${PROJECT_NAME}/vector.hpp
+  inc/${PROJECT_NAME}/atomic_base.hpp
 )
 
 add_library(${PROJECT_NAME} INTERFACE)
