@@ -41,5 +41,7 @@ function(add_boost_test test_name)
 endfunction()
 
 add_boost_test(atomic_test)
-add_boost_test(optional_test)
 add_boost_test(atomic_rw_test)
+add_boost_test(container_test)
+add_boost_test(container_traits_test)
+add_boost_test(optional_test)
