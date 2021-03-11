@@ -18,6 +18,8 @@ include_directories (${Boost_INCLUDE_DIRS})
 set(INC
   inc/${PROJECT_NAME}/atomic.hpp
   inc/${PROJECT_NAME}/atomic_base.hpp
+  inc/${PROJECT_NAME}/optional.hpp
+  inc/${PROJECT_NAME}/optional_base.hpp
 )
 
 add_library(${PROJECT_NAME} INTERFACE)
@@ -35,8 +37,5 @@ function(add_boost_test test_name)
   add_test(${test_name}_test COMMAND ${test_name})
 endfunction()
 
-add_boost_test(container_traits_test)
-add_boost_test(container_test)
 add_boost_test(atomic_test)
-add_boost_test(atomic_rw_test)
 add_boost_test(optional_test)
