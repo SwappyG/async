@@ -18,6 +18,9 @@ include_directories (${Boost_INCLUDE_DIRS})
 set(INC
   inc/${PROJECT_NAME}/atomic.hpp
   inc/${PROJECT_NAME}/atomic_base.hpp
+  inc/${PROJECT_NAME}/atomic_proxies.hpp
+  inc/${PROJECT_NAME}/atomic_rw.hpp
+  inc/${PROJECT_NAME}/atomic_rw_base.hpp
   inc/${PROJECT_NAME}/optional.hpp
   inc/${PROJECT_NAME}/optional_base.hpp
 )
@@ -39,3 +42,4 @@ endfunction()
 
 add_boost_test(atomic_test)
 add_boost_test(optional_test)
+add_boost_test(atomic_rw_test)

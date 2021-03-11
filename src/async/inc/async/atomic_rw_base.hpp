@@ -1,3 +1,10 @@
+/**
+ * Concept is inspired by Louis Charles implementation of `Safe`:
+ * https://github.com/LouisCharlesC/safe
+ *
+ * Small tweaks to API, but the concept is quite similar
+ */
+
 #ifndef NIL_SRC_ASYNC_INC_ASYNC_ATOMICRWBASE_HPP_
 #define NIL_SRC_ASYNC_INC_ASYNC_ATOMICRWBASE_HPP_
 
