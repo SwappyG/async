@@ -9,8 +9,6 @@ find_package(Boost REQUIRED COMPONENTS unit_test_framework)
 
 include_directories (${Boost_INCLUDE_DIRS})
 
-include_directories (${CMAKE_SOURCE_DIR})
-
 set(INC
   inc/${PROJECT_NAME}/detector.hpp
   inc/${PROJECT_NAME}/devoid.hpp
@@ -24,8 +22,7 @@ add_library(${PROJECT_NAME} INTERFACE)
 target_include_directories(${PROJECT_NAME} INTERFACE inc/)
 target_link_libraries(${PROJECT_NAME} INTERFACE ${Boost_LIBRARIES})
 
-install(
-  TARGETS ${PROJECT_NAME} DESTINATION lib
-)
+set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/../install" CACHE STRING "force path to local" FORCE)
 
+install(TARGETS ${PROJECT_NAME} DESTINATION lib)
 install(FILES ${INC} DESTINATION inc)

@@ -17,7 +17,7 @@ include_directories (${Boost_INCLUDE_DIRS})
 set(INC
   inc/${PROJECT_NAME}/atomic.hpp
   inc/${PROJECT_NAME}/atomic_base.hpp
-  inc/${PROJECT_NAME}/atomic_proxies.hpp
+  inc/${PROJECT_NAME}/atomic_rw_proxy.hpp
   inc/${PROJECT_NAME}/atomic_rw.hpp
   inc/${PROJECT_NAME}/atomic_rw_base.hpp
   inc/${PROJECT_NAME}/optional.hpp
@@ -28,6 +28,8 @@ add_library(${PROJECT_NAME} INTERFACE)
 target_include_directories(${PROJECT_NAME} INTERFACE inc/)
 target_link_libraries(${PROJECT_NAME} INTERFACE meta Threads::Threads)
 
+set(CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/../install" CACHE STRING "force path to local" FORCE)
+
 install(TARGETS ${PROJECT_NAME} DESTINATION lib)
 install(FILES ${INC} DESTINATION inc)
 
@@ -35,6 +37,8 @@ function(add_boost_test test_name)
   add_executable(${test_name} tests/${test_name}.cpp)
   target_link_libraries(${test_name} ${Boost_LIBRARIES} ${PROJECT_NAME} ${ARGN})
   add_test(${test_name}_test COMMAND ${test_name})
+
+  install(TARGETS ${test_name} DESTINATION bin)
 endfunction()
 
 add_boost_test(atomic_test)
