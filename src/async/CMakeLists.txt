@@ -33,8 +33,6 @@ install(TARGETS ${PROJECT_NAME} DESTINATION lib)
 install(FILES ${INC} DESTINATION inc)
 
 function(add_boost_test test_name)
-  message(STATUS argn: ${ARGN})
-  message(STATUS ${test_name})
   add_executable(${test_name} tests/${test_name}.cpp)
   target_link_libraries(${test_name} ${Boost_LIBRARIES} ${PROJECT_NAME} ${ARGN})
   add_test(${test_name}_test COMMAND ${test_name})
