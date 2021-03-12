@@ -4,3 +4,4 @@ set(META_PROJECT_NAME cpp)
 project(${META_PROJECT_NAME})
 
 add_subdirectory(src/meta)
+add_subdirectory(src/async)
