@@ -76,6 +76,12 @@ using if_invocable_r = If<std::is_invocable_r_v<R, Fn, Args...>>;
 template <class R, class Fn, class... Args>
 using if_not_invocable_r = If<!std::is_invocable_r_v<R, Fn, Args...>>;
 
+template <class Derv, class Base>
+using if_convertible = If<std::is_convertible<Derv, Base>{}>;
+
+template <class Derv, class Base>
+using if_not_convertible = If<!std::is_convertible<Derv, Base>{}>;
+
 // New traits, not in STL ------------------------------------------------------
 
 template <class T>
